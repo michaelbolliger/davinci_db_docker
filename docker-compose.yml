@@ -1,6 +1,6 @@
 postgres:
   restart: always
-  image: postgres:9.4
+  image: postgres:9.5.4
   
   ports:
     - "5432:5432"
