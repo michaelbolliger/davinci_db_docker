@@ -1,25 +1,14 @@
-version: "2"
+version: "3.6"
+
 services:
+
   postgres:
-    restart: always
     image: postgres:9.5.4
-    
+    restart: always
     ports:
       - "5432:5432"
     environment:
-      - DEBUG=false
-
-      - DB_USER=postgres
-      - DB_PASS=DaVinci
-      - DB_NAME=
-      - DB_TEMPLATE=
-
-      - DB_EXTENSION=
-
-      - REPLICATION_MODE=
-      - REPLICATION_USER=
-      - REPLICATION_PASS=
-      - REPLICATION_SSLMODE=
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: DaVinci
     volumes:
       - ./postgresql_data:/var/lib/postgresql/data
-      
