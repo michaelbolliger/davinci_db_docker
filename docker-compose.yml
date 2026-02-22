@@ -1,14 +1,16 @@
-version: "3.6"
-
 services:
 
-  postgres:
-    image: postgres:9.5.4
+  db:
+    image: postgres:18-alpine
     restart: always
+    shm_size: 128mb
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: DaVinci
+
     volumes:
-      - ./postgresql_data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
